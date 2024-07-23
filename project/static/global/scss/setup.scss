@@ -41,3 +41,9 @@ body {
 input {
   all: unset;
 }
+
+.form-field {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}

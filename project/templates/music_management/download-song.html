@@ -3,8 +3,8 @@
 
 
 {% block static %}
-  <script defer src="{% static 'music_management/scripts/download-song.js' %}"></script>
   <link rel="stylesheet" href="{% static 'music_management/styles/download-song.css' %}">
+  <link rel="stylesheet" href="{% static 'music_management/styles/song-data.css' %}">
 {% endblock static %}
 
 
@@ -18,11 +18,9 @@
       <input type="submit" value="Load Song">
     </div>
 
-    <div class="song-data">
-      {% if download %}
-        {% include 'music_management/components/song-data.html' %}
-      {% endif %}
-    </div>
+    {% if download %}
+      {% include 'music_management/components/song-data.html' %}
+    {% endif %}
 
   </form>
 </div>

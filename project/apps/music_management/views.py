@@ -38,7 +38,10 @@ def download_song(request: HttpRequest) -> HttpResponse:
         if yt_url := form.cleaned_data.get('yt_url'):
             yt = load_yt(yt_url)
             
-            context.update({'download': True})
+            context.update({
+                'download': True,
+                'cover_url': yt.thumbnail_url,          
+            })
             form = forms.DownloadSongForm({
                 'yt_url': yt_url,
                 'title': yt.title,
@@ -46,6 +49,7 @@ def download_song(request: HttpRequest) -> HttpResponse:
                 'save_to_library': True,
             })
 
+    print(request.POST)
     context.update({'form': form})
     return render(request, template, context)
 

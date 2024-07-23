@@ -1,0 +1,42 @@
+@use "../../scss/colors" as clr;
+@use "../../scss/components" as comp;
+
+
+.v-sep {
+  height: .1rem;
+  background: white;
+}
+
+.h-sep {
+  width: .1rem;
+  background: white;
+}
+
+
+.song-data {
+  display: flex;
+  gap: 1.5rem;
+
+  &__song-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &__cover {
+      border-radius: 1rem;
+    }
+
+    #id_title {
+      width: 100%;
+    }
+  }
+
+  &__download-data {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input[type=submit] {
+    @include comp.clickButton($bg-clr: clr.$green);
+  }
+}

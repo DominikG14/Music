@@ -1,0 +1,41 @@
+.v-sep {
+  height: 0.1rem;
+  background: white;
+}
+
+.h-sep {
+  width: 0.1rem;
+  background: white;
+}
+
+.song-data {
+  display: flex;
+  gap: 1.5rem;
+}
+.song-data__song-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.song-data__song-info__cover {
+  border-radius: 1rem;
+}
+.song-data__song-info #id_title {
+  width: 100%;
+}
+.song-data__download-data {
+  display: flex;
+  flex-direction: column;
+}
+.song-data input[type=submit] {
+  padding: 0.6rem 0.7rem 0.6rem 0.7rem;
+  background: rgb(49, 167, 49);
+  color: hsl(0, 0%, 100%);
+  border-radius: 0.5rem;
+  transition: background 400ms ease-out;
+}
+.song-data input[type=submit]:hover {
+  box-shadow: 0 0 1rem hsl(4, 100%, 70%);
+  background: hsl(4, 100%, 70%);
+  cursor: pointer;
+}/*# sourceMappingURL=song-data.css.map */

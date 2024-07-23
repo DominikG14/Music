@@ -7,6 +7,10 @@ from pytube import YouTube
 
 
 class DownloadSongForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = ''
+
     download = forms.BooleanField(required=False)
     save_to_library = forms.BooleanField(required=False)
 
@@ -17,7 +21,7 @@ class DownloadSongForm(forms.ModelForm):
             'yt_url',
             'title',
             'download',
-            'save_to_library'
+            'save_to_library',
         ]
 
         widgets = {

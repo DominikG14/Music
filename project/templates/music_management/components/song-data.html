@@ -1,10 +1,29 @@
+<div class="v-sep"></div>
+
 <div class="song-data">
-  {{ form.title.label_tag }}
-  {{ form.title }}
 
-  {{ form.download.label_tag }}
-  {{ form.download }}
+  <div class="song-data__song-info">
+    <img class="song-data__song-info__cover" src="{{ cover_url }}" alt="">
 
-  {{ form.save_to_library.label_tag }}
-  {{ form.save_to_library }}
+    <div class="form-field">
+      {{ form.title.label_tag }}
+      {{ form.title }}
+    </div>
+  </div>
+
+  <div class="h-sep"></div>
+
+  <div class="song-data__download-info">
+    <div class="form-field">
+      {{ form.download.label_tag }}
+      {{ form.download }}
+    </div>
+
+    <div class="form-field">
+      {{ form.save_to_library.label_tag }}
+      {{ form.save_to_library }}
+    </div>
+
+    <input type="submit" value="Submit">
+  </div>
 </div>

@@ -2,13 +2,13 @@
 
 
 // Templates 
-@mixin _basicComponent($tb-pad: auto, $lr-pad: auto){
+@mixin _basicComponent($tb-pad: auto, $lr-pad: auto, $bg-clr: clr.$gray){
   // Use this to build basic components look
 
   // tb - top, bottom
   // lr - left, right
   padding: $tb-pad $lr-pad $tb-pad $lr-pad;
-  background: clr.$gray;
+  background: $bg-clr;
   color: clr.$font;
 }
 
@@ -49,10 +49,11 @@
   }
 }
 
-@mixin clickButton(){
+@mixin clickButton($bg-clr: clr.$gray){
   @include _basicComponent(
     $tb-pad: .6rem,
     $lr-pad: .7rem,
+    $bg-clr: $bg-clr,
   );
 
   border-radius: .5rem;
@@ -66,10 +67,9 @@
 }
 
 @mixin checkButton {
-  @include _basicComponent(
-    $tb-pad: .5rem,
-    $lr-pad: .5rem,
-  );
+  @include _basicComponent();
+  height: 1.5rem;
+  width: 1.5rem;
 
   border-radius: .1rem;
   transition: background 400ms ease-out;
@@ -82,4 +82,13 @@
   &:hover {
     cursor: pointer;
   }
+}
+
+@mixin label {
+  @include _basicComponent(
+    $tb-pad: .5rem,
+    $lr-pad: .7rem,
+  );
+
+  border-radius: .5rem;
 }

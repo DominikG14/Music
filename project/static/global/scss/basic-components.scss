@@ -2,15 +2,23 @@
 
 
 input {
-  &[type="url"] {
+  &[type=url] {
     @include comp.textInput();
   }
 
-  &[type="submit"] {
+  &[type=submit] {
     @include comp.clickButton();
   }
 
-  &[type="checkbox"] {
+  &[type=checkbox] {
     @include comp.checkButton();
   }
+
+  &[type=text] {
+    @include comp.textInput();
+  }
+}
+
+label {
+  @include comp.label();
 }
