@@ -17,8 +17,9 @@
   {% endblock base_static %}
 </head>
 <body>
-  <nav class="top-nav"></nav>
-  <nav class="side-nav"></nav>
+  {% include 'global/components/top-nav.html' %}
+  {% include 'global/components/side-nav.html' %}
+  
   <main>
     {% block base_content %}
     {% endblock base_content %}

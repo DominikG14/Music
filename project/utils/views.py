@@ -1,4 +1,4 @@
-import inspect, logging
+import inspect
 
 
 def get_template(template_name: str = '', *, path: str = '', app: str) -> str:
@@ -13,11 +13,3 @@ def get_template(template_name: str = '', *, path: str = '', app: str) -> str:
         return f'{app}/{path}/{template_name}.html'
 
     return f'{app}/{template_name}.html'
-
-
-def get_func_logger() -> logging.Logger:
-    func_name = inspect.stack()[1][3]
-    logger_name = f'logger_{func_name}'
-    logger = logging.getLogger(logger_name)
-
-    return logger

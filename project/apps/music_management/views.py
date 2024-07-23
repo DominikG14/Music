@@ -17,6 +17,7 @@ def download_song(request: HttpRequest) -> HttpResponse:
             yt = YouTube(yt_url)
             yt.check_availability() # raises exceptions
         
+        # TODO: Check for variety of exceptions
         except VideoUnavailable:
             pass
 

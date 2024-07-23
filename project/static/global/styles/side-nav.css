@@ -1,1 +1,4 @@
-/*# sourceMappingURL=side-nav.css.map */
+.side-nav {
+  background: hsl(180, 2%, 12%);
+  border-top: 3px solid hsl(0, 0%, 22%);
+}/*# sourceMappingURL=side-nav.css.map */

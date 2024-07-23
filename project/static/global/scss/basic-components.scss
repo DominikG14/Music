@@ -1,10 +1,16 @@
 @use "../../scss/components" as comp;
 
 
-input[type="url"] {
-  @include comp.textInput();
-}
+input {
+  &[type="url"] {
+    @include comp.textInput();
+  }
 
-input[type="submit"] {
-  @include comp.clickButton();
+  &[type="submit"] {
+    @include comp.clickButton();
+  }
+
+  &[type="checkbox"] {
+    @include comp.checkButton();
+  }
 }

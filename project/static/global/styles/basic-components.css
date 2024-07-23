@@ -1,25 +1,44 @@
 input[type=url] {
-  background: #1f1f1f;
+  padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+  background: hsl(0, 0%, 22%);
   color: #ffffff;
   width: auto;
   height: auto;
-  border: 2px solid #1f1f1f;
+  border: 2px solid hsl(0, 0%, 22%);
   border-radius: 3rem;
-  padding: 0.5rem 0.7rem 0.5rem 0.7rem;
   transition: border 500ms ease-out;
 }
-input[type=url]:focus {
-  border-color: #ff7166;
+input[type=url]:not(:-moz-placeholder-shown) {
+  box-shadow: 0 0 1rem hsl(4, 100%, 70%);
+  border-color: hsl(4, 100%, 70%);
 }
-
+input[type=url]:focus, input[type=url]:not(:placeholder-shown) {
+  box-shadow: 0 0 1rem hsl(4, 100%, 70%);
+  border-color: hsl(4, 100%, 70%);
+}
 input[type=submit] {
-  background: #1f1f1f;
+  padding: 0.6rem 0.7rem 0.6rem 0.7rem;
+  background: hsl(0, 0%, 22%);
   color: #ffffff;
-  border: 2px solid #1f1f1f;
   border-radius: 0.5rem;
-  padding: 0.5rem 0.7rem 0.5rem 0.7rem;
-  transition: background 500ms ease-out;
+  transition: background 400ms ease-out;
 }
 input[type=submit]:hover {
-  background: #ff7166;
+  box-shadow: 0 0 1rem hsl(4, 100%, 70%);
+  background: hsl(4, 100%, 70%);
+  cursor: pointer;
+}
+input[type=checkbox] {
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: hsl(0, 0%, 22%);
+  color: #ffffff;
+  border-radius: 0.1rem;
+  transition: background 400ms ease-out;
+}
+input[type=checkbox]:checked {
+  box-shadow: 0 0 1rem hsl(4, 100%, 70%);
+  background: hsl(4, 100%, 70%);
+}
+input[type=checkbox]:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=basic-components.css.map */

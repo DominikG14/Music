@@ -4,19 +4,26 @@
 
 {% block static %}
   <script defer src="{% static 'music_management/scripts/download-song.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'music_management/styles/download-song.css' %}">
 {% endblock static %}
 
 
 {% block content %}
-<form method="POST">
-  {% csrf_token %}
-  {{ form.yt_url.label_tag }}
-  {{ form.yt_url }}
+<div class="content">
+  <form method="POST">
+    {% csrf_token %}
 
-  {% if download %}
-    {% include 'music_management/components/song-data.html' %}
-  {% endif %}
+    <div class="top">
+      {{ form.yt_url }}
+      <input type="submit" value="Load Song">
+    </div>
 
-  <input type="submit" value="Load Song">
-</form>
+    <div class="song-data">
+      {% if download %}
+        {% include 'music_management/components/song-data.html' %}
+      {% endif %}
+    </div>
+
+  </form>
+</div>
 {% endblock content %}

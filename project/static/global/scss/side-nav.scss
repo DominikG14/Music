@@ -1,0 +1,7 @@
+@use "../../scss/colors" as clr;
+
+
+.side-nav {
+  background: clr.$dark-gray;
+  border-top: 3px solid clr.$gray
+}

@@ -1,12 +1,16 @@
-// Colors
-$orange: #ffa92d;
-$grapefruit: #ff7166;
-$pink: #ff61b6;
+// COLORS
+// Colorfull
+$orange: hsl(35, 100%, 59%);
+$grapefruit: hsl(4, 100%, 70%);
+$pink: hsl(328, 100%, 69%);
 
-$gray: #1f1f1f;
+// Darkish
+$dark-gray: hsl(180, 2%, 12%);
+$gray: hsl(0, 0%, 22%);
 
+// Functional
 $font: #ffffff;
 
 
-// Gradients
+// GRADIENTS
 $sunny-gradient: linear-gradient(150deg, $orange 0%, $grapefruit 50%, $pink 100%);

@@ -1,6 +1,8 @@
 from django import forms
 from . import models
 
+from utils.forms import FormSetup
+
 from pytube import YouTube
 
 
@@ -17,6 +19,10 @@ class DownloadSongForm(forms.ModelForm):
             'download',
             'save_to_library'
         ]
+
+        widgets = {
+            'yt_url': forms.URLInput(attrs={'placeholder': 'YouTube song url'})
+        }
     
     
     def save(self, commit: bool = False) -> models.Song:

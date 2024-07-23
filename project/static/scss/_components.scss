@@ -1,54 +1,85 @@
 @use "colors" as clr;
 
 
-@mixin basicComponent($tb-pad: auto, $lr-pad: auto) {
+// Templates 
+@mixin _basicComponent($tb-pad: auto, $lr-pad: auto){
+  // Use this to build basic components look
+
+  // tb - top, bottom
+  // lr - left, right
   padding: $tb-pad $lr-pad $tb-pad $lr-pad;
   background: clr.$gray;
   color: clr.$font;
 }
 
 
-@mixin textInput($width: auto, $height: auto) {
-  @include basicComponent(
+// Effects
+@mixin _grapefruitShadow(){
+  box-shadow: 0 0 1rem clr.$grapefruit;
+}
+
+
+// Containers
+@mixin contentBox(){
+  background: clr.$dark-gray;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+
+// Inputs
+@mixin textInput($width: auto, $height: auto){
+  @include _basicComponent(
     $tb-pad: .5rem,
     $lr-pad: .7rem,
   );
-
-  // Quick setup
-  $border-radius: 3rem;
-  $border-width: 2px;
-  $fading-time: 500ms;
 
   width: $width;
   height: $height;
 
-  border: $border-width solid clr.$gray;
-  border-radius: $border-radius;
+  border: 2px solid clr.$gray;
+  border-radius: 3rem;
 
-  transition : border $fading-time ease-out;
+  transition : border 500ms ease-out;
 
-  &:focus {
+  &:focus,
+  &:not(:placeholder-shown) {
+    @include _grapefruitShadow();
     border-color: clr.$grapefruit;
   }
 }
 
-@mixin clickButton() {
-  @include basicComponent(
-    $tb-pad: .5rem,
+@mixin clickButton(){
+  @include _basicComponent(
+    $tb-pad: .6rem,
     $lr-pad: .7rem,
   );
 
-  // Quick setup
-  $border-radius: 1rem;
-  $fading-time: 500ms;
-
-  border-radius: $border-radius;
-  padding: $tb-pad $lr-pad $tb-pad $lr-pad;
-
-  transition: background $fading-time ease-out;
+  border-radius: .5rem;
+  transition: background 400ms ease-out;
 
   &:hover {
+    @include _grapefruitShadow();
     background: clr.$grapefruit;
+    cursor: pointer;
+  }
+}
+
+@mixin checkButton {
+  @include _basicComponent(
+    $tb-pad: .5rem,
+    $lr-pad: .5rem,
+  );
+
+  border-radius: .1rem;
+  transition: background 400ms ease-out;
+
+  &:checked {
+    @include _grapefruitShadow();
+    background: clr.$grapefruit;
+  }
+
+  &:hover {
     cursor: pointer;
   }
 }

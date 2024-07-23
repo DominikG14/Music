@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"side-nav.css"}
+{"version":3,"sources":["../scss/side-nav.scss","../../scss/_colors.scss","side-nav.css"],"names":[],"mappings":"AAGA;EACE,6BCGU;EDFV,qCAAA;AEFF","file":"side-nav.css"}

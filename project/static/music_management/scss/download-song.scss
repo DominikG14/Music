@@ -1,0 +1,33 @@
+@use "../../scss/components" as comp;
+
+
+@mixin _biggerInputs(){
+  height: 2rem;
+  font-size: 1.2rem;
+}
+
+
+.content {
+  @include comp.contentBox();
+}
+
+input {
+  &#id_yt_url,
+  &[type="submit"] {
+    @include _biggerInputs()
+  }
+
+  &#id_yt_url {
+    width: 50%;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  .top {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
