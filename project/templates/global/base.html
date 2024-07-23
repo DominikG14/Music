@@ -5,15 +5,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}Template Django Project{% endblock title %}</title>
+  <title>{% block title %}Music{% endblock title %}</title>
   
   <link rel="stylesheet" href="{% static 'global/styles/setup.css' %}">
+  <link rel="stylesheet" href="{% static 'global/styles/top-nav.css' %}">
+  <link rel="stylesheet" href="{% static 'global/styles/side-nav.css' %}">
+  <link rel="stylesheet" href="{% static 'global/styles/main.css' %}">
+  <link rel="stylesheet" href="{% static 'global/styles/basic-components.css' %}">
 
   {% block base_static %}
   {% endblock base_static %}
 </head>
 <body>
-  {% block base_content %}
-  {% endblock base_content %}
+  <nav class="top-nav"></nav>
+  <nav class="side-nav"></nav>
+  <main>
+    {% block base_content %}
+    {% endblock base_content %}
+  </main>
 </body>
 </html>

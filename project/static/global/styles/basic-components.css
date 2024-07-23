@@ -1,0 +1,25 @@
+input[type=url] {
+  background: #1f1f1f;
+  color: #ffffff;
+  width: auto;
+  height: auto;
+  border: 2px solid #1f1f1f;
+  border-radius: 3rem;
+  padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+  transition: border 500ms ease-out;
+}
+input[type=url]:focus {
+  border-color: #ff7166;
+}
+
+input[type=submit] {
+  background: #1f1f1f;
+  color: #ffffff;
+  border: 2px solid #1f1f1f;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+  transition: background 500ms ease-out;
+}
+input[type=submit]:hover {
+  background: #ff7166;
+}/*# sourceMappingURL=basic-components.css.map */

@@ -1,5 +1,22 @@
+{% extends 'music_management/base.html' %}
+{% load static %}
+
+
+{% block static %}
+  <script defer src="{% static 'music_management/scripts/download-song.js' %}"></script>
+{% endblock static %}
+
+
+{% block content %}
 <form method="POST">
   {% csrf_token %}
-  {{ form }}
-  <input type="submit" value="download">
+  {{ form.yt_url.label_tag }}
+  {{ form.yt_url }}
+
+  {% if download %}
+    {% include 'music_management/components/song-data.html' %}
+  {% endif %}
+
+  <input type="submit" value="Load Song">
 </form>
+{% endblock content %}

@@ -1,0 +1,54 @@
+@use "colors" as clr;
+
+
+@mixin basicComponent($tb-pad: auto, $lr-pad: auto) {
+  padding: $tb-pad $lr-pad $tb-pad $lr-pad;
+  background: clr.$gray;
+  color: clr.$font;
+}
+
+
+@mixin textInput($width: auto, $height: auto) {
+  @include basicComponent(
+    $tb-pad: .5rem,
+    $lr-pad: .7rem,
+  );
+
+  // Quick setup
+  $border-radius: 3rem;
+  $border-width: 2px;
+  $fading-time: 500ms;
+
+  width: $width;
+  height: $height;
+
+  border: $border-width solid clr.$gray;
+  border-radius: $border-radius;
+
+  transition : border $fading-time ease-out;
+
+  &:focus {
+    border-color: clr.$grapefruit;
+  }
+}
+
+@mixin clickButton() {
+  @include basicComponent(
+    $tb-pad: .5rem,
+    $lr-pad: .7rem,
+  );
+
+  // Quick setup
+  $border-radius: 1rem;
+  $fading-time: 500ms;
+
+  border-radius: $border-radius;
+  padding: $tb-pad $lr-pad $tb-pad $lr-pad;
+
+  transition: background $fading-time ease-out;
+
+  &:hover {
+    background: clr.$grapefruit;
+    cursor: pointer;
+  }
+}

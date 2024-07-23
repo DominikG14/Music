@@ -8,7 +8,7 @@ from mutagen.mp4 import MP4, MP4Cover
 import requests
 
 
-class Creator(models.Model):
+class Artist(models.Model):
     yt_url = models.URLField()
     name = models.CharField(max_length=255)
 
@@ -19,10 +19,11 @@ class Creator(models.Model):
 class Song(models.Model):
     # urls
     yt_url = models.URLField()
+    cover_url = models.URLField()
 
     # song info
     title = models.CharField(max_length=255)
-    creators = models.ManyToManyField(Creator)
+    artists = models.ManyToManyField(Artist)
 
     # file info
     length = models.IntegerField(blank=True, null=True)
@@ -35,11 +36,6 @@ class Song(models.Model):
 
     def get_mp4_url(self) -> str:
         return f'{settings.MEDIA_ROOT}/songs/{self.title}.mp4'
-    
-
-    def get_cover_url(self) -> str:
-        yt = YouTube(self.yt_url)
-        return yt.thumbnail_url
 
 
     def download(self) -> None:
@@ -61,7 +57,7 @@ class Song(models.Model):
         mp4 = MP4(self.get_mp4_url())
         mp4[TITLE] = self.title
         # mp4[ARTIST] = TODO: Loop through avery artist and add here 
-        cover = requests.get(self.get_cover_url()).content
+        cover = requests.get(self.cover_url).content
         mp4[COVER] = [MP4Cover(cover, imageformat=MP4Cover.FORMAT_JPEG)]
         mp4.save()
 
